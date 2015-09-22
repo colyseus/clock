@@ -22,7 +22,7 @@ var Clock = (function () {
     this.oldTime = 0;
     this._elapsedTime = 0;
 
-    this.now = typeof window !== "undefined" && window.performance && window.performance.now || Date.now;
+    this.now = typeof window !== "undefined" && window.performance && window.performance.now.bind(window.performance) || Date.now;
 
     // auto-start
     if (this.autoStart) {
