@@ -11,32 +11,31 @@ describe('clock', function() {
 
     it('should return 1000 after one second', function (done) {
       let clock = new Clock()
-      clock.start()
       setTimeout(function() {
-        var elapsedTime = clock.elapsedTime
-        if (elapsedTime < 0.9 || elapsedTime > 1.1) { throw new Error("time rror"); }
+        clock.tick()
+        if (clock.elapsedTime < 950 || clock.elapsedTime > 1050) { throw new Error("time error"); }
         done()
       }, 1000)
     });
   });
 
-  describe('#delta', function () {
+  describe('#deltaTime', function () {
     it('should return 0 when not initialized', function () {
       let clock = new Clock()
-      assert.equal(0, clock.delta);
+      assert.equal(0, clock.deltaTime);
     });
 
     it('should return delta after delay', function (done) {
       let clock = new Clock()
-      assert.equal(0, clock.delta);
+      assert.equal(0, clock.deltaTime);
 
       setTimeout(function() {
-        let delta = clock.delta
-        if (delta < 0.008 || delta > 0.019) { throw new Error("time rror"); }
+        clock.tick()
+        if (clock.deltaTime < 8 || clock.deltaTime > 15) { throw new Error("time error"); }
 
         setTimeout(function() {
-          let delta = clock.delta
-          if (delta < 0.018 || delta > 0.119) { throw new Error("time rror"); }
+          clock.tick()
+          if (clock.deltaTime < 18 || clock.deltaTime > 22) { throw new Error("time error"); }
           done()
         }, 20)
 

@@ -1,17 +1,18 @@
 clock.js
 ===
 
-A simple clock/ticker implementation to track elapsed/delta time.
+A simple clock/ticker implementation to track delta/elapsed time.
 
-**2.1kb minified**
+**1.9kb minified**
 
 API
 ---
 
 - clock.start()
 - clock.stop()
+- clock.tick()
 - clock.elapsedTime
-- clock.delta
+- clock.deltaTime
 
 Usage example
 ---
@@ -20,13 +21,11 @@ Usage example
 var Clock = require('clock.js')
 var clock = new Clock()
 
-function step(timestamp) {
-  console.log("Delta time: ", clock.delta)
+setInterval(function() {
+  clock.tick()
+  console.log("Delta time: ", clock.deltaTime)
   console.log("Elapsed time: ", clock.elasedTime)
-  requestAnimationFrame(step);
-}
-
-step()
+}, 1000 / 60)
 ```
 
 License

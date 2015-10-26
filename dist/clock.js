@@ -15,17 +15,16 @@ var Clock = (function () {
 
     _classCallCheck(this, Clock);
 
-    this.autoStart = autoStart;
     this.running = false;
 
-    this.startTime = 0;
-    this.oldTime = 0;
-    this._elapsedTime = 0;
+    this.deltaTime = 0;
+    this.currentTime = 0;
+    this.elapsedTime = 0;
 
     this.now = typeof window !== "undefined" && window.performance && window.performance.now.bind(window.performance) || Date.now;
 
     // auto-start
-    if (this.autoStart) {
+    if (autoStart) {
       this.start();
     }
   }
@@ -33,40 +32,22 @@ var Clock = (function () {
   _createClass(Clock, [{
     key: "start",
     value: function start() {
-      this.startTime = this.now();
-      this.oldTime = this.startTime;
+      this.currentTime = this.now();
       this.running = true;
     }
   }, {
     key: "stop",
     value: function stop() {
-      this.update();
       this.running = false;
     }
   }, {
-    key: "update",
-    value: function update() {
+    key: "tick",
+    value: function tick() {
       var newTime = arguments.length <= 0 || arguments[0] === undefined ? this.now() : arguments[0];
 
-      var diff = 0;
-
-      diff = 0.001 * (newTime - this.oldTime);
-      this.oldTime = newTime;
-
-      this._elapsedTime += diff;
-
-      return diff;
-    }
-  }, {
-    key: "elapsedTime",
-    get: function get() {
-      this.update();
-      return this._elapsedTime;
-    }
-  }, {
-    key: "delta",
-    get: function get() {
-      return this.update();
+      this.deltaTime = newTime - this.currentTime;
+      this.currentTime = newTime;
+      this.elapsedTime += this.deltaTime;
     }
   }]);
 
