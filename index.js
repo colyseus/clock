@@ -16,7 +16,9 @@ export default class Clock {
   }
 
   start () {
+    this.deltaTime = 0
     this.currentTime = this.now()
+    this.elapsedTime = 0
     this.running = true
   }
 

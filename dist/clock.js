@@ -32,7 +32,9 @@ var Clock = (function () {
   _createClass(Clock, [{
     key: "start",
     value: function start() {
+      this.deltaTime = 0;
       this.currentTime = this.now();
+      this.elapsedTime = 0;
       this.running = true;
     }
   }, {
