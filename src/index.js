@@ -1,4 +1,4 @@
-export default class Clock {
+class Clock {
 
   constructor ( autoStart = true ) {
     this.running = false
@@ -33,3 +33,5 @@ export default class Clock {
   }
 
 }
+
+module.exports = Clock

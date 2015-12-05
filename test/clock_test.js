@@ -1,5 +1,5 @@
 var assert = require("assert");
-var Clock = require('../index.js')
+var Clock = require('../src/index.js')
 
 describe('clock', function() {
 
