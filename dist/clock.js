@@ -7,7 +7,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Clock = (function () {
   function Clock() {
-    var autoStart = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+    var autoStart = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
     _classCallCheck(this, Clock);
 
@@ -18,10 +18,11 @@ var Clock = (function () {
     this.elapsedTime = 0;
 
     this.now = typeof window !== "undefined" && window.performance && window.performance.now.bind(window.performance) || Date.now;
+    this.start();
 
-    // auto-start
+    // auto set interval to 60 ticks per second
     if (autoStart) {
-      this.start();
+      setInterval(this.tick.bind(this), 1000 / 60);
     }
   }
 

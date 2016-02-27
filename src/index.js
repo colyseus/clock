@@ -1,6 +1,6 @@
 class Clock {
 
-  constructor ( autoStart = true ) {
+  constructor ( autoStart = false ) {
     this.running = false
 
     this.deltaTime = 0
@@ -8,10 +8,11 @@ class Clock {
     this.elapsedTime = 0
 
     this.now = (typeof(window) !== "undefined" && window.performance && (window.performance.now).bind(window.performance)) || Date.now
+    this.start()
 
-    // auto-start
+    // auto set interval to 60 ticks per second
     if (autoStart) {
-      this.start()
+      setInterval(this.tick.bind(this), 1000 / 60)
     }
   }
 
