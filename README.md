@@ -28,7 +28,7 @@ var clock = new Clock()
 setInterval(function() {
   clock.tick()
   console.log("Delta time: ", clock.deltaTime)
-  console.log("Elapsed time: ", clock.elasedTime)
+  console.log("Elapsed time: ", clock.elapsedTime)
   console.log("Current time: ", clock.currentTime)
 }, 1000 / 60)
 ```
