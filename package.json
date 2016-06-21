@@ -1,6 +1,6 @@
 {
   "name": "clock.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple clock/ticker implementation to track elapsed/delta time.",
   "author": "Endel Dreyer <endel.dreyer@gmail.com>",
   "keywords": [ "clock", "ticker", "delta", "time" ],
@@ -8,21 +8,16 @@
     "type": "git",
     "url": "git://github.com/endel/clock.js.git"
   },
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.js",
   "scripts": {
-    "dist": "browserify src/index.js -t babelify -s Clock -o dist/clock.js && browserify src/index.js -t babelify -t uglifyify -s Clock -o dist/clock.min.js",
-    "test": "mocha --compilers js:babel-register",
-    "prepublish": "babel src -d lib"
+    "test": "npm run prepublish && mocha --compilers js:babel-register",
+    "prepublish": "tsc -d src/index.ts --outDir dist"
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.1.2",
-    "babel-preset-es2015": "^6.1.2",
-
-    "babelify": "^7.2.0",
-    "browserify": "^12.0.1",
+    "assert": "^1.3.0",
     "mocha": "^2.3.3",
-    "uglifyify": "^3.0.1",
-    "assert": "^1.3.0"
+    "typescript": "^1.8.10"
   }
 }

@@ -1,5 +1,13 @@
 class Clock {
 
+  public running: boolean;
+
+  public deltaTime: number;
+  public currentTime: number;
+  public elapsedTime: number;
+
+  protected now: Function;
+
   constructor ( autoStart = false ) {
     this.running = false
 
@@ -35,4 +43,4 @@ class Clock {
 
 }
 
-module.exports = Clock
+export default Clock
