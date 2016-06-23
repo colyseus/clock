@@ -8,7 +8,7 @@ class Clock {
 
   protected now: Function;
 
-  constructor ( autoStart = false ) {
+  constructor (autoStart: boolean = false) {
     this.running = false
 
     this.deltaTime = 0
