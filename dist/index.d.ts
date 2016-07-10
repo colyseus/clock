@@ -9,4 +9,4 @@ declare class Clock {
     stop(): void;
     tick(newTime?: any): void;
 }
-export default Clock;
+export = Clock;

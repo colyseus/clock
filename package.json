@@ -1,6 +1,6 @@
 {
   "name": "clock.js",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A simple clock/ticker implementation to track elapsed/delta time.",
   "author": "Endel Dreyer <endel.dreyer@gmail.com>",
   "keywords": [

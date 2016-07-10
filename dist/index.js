@@ -30,5 +30,4 @@ var Clock = (function () {
     };
     return Clock;
 }());
-exports.__esModule = true;
-exports["default"] = Clock;
+module.exports = Clock;
