@@ -1,6 +1,8 @@
 clock.js [![Build Status](https://secure.travis-ci.org/gamestdio/clock.js.png?branch=master)](http://travis-ci.org/gamestdio/clock.js)
 ===
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gamestdio/clock.js.svg)](https://greenkeeper.io/)
+
 A simple clock/ticker implementation to track delta/elapsed time.
 
 **2kb minified**
