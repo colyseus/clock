@@ -1,26 +1,27 @@
 "use strict";
 var Clock = (function () {
-    function Clock(autoStart) {
-        if (autoStart === void 0) { autoStart = false; }
+    function Clock(useInterval) {
+        if (useInterval === void 0) { useInterval = false; }
         this.running = false;
-        this.deltaTime = 0;
-        this.currentTime = 0;
-        this.elapsedTime = 0;
         this.now = (typeof (window) !== "undefined" && window.performance && (window.performance.now).bind(window.performance)) || Date.now;
-        this.start();
-        // auto set interval to 60 ticks per second
-        if (autoStart) {
-            setInterval(this.tick.bind(this), 1000 / 60);
-        }
+        this.start(useInterval);
     }
-    Clock.prototype.start = function () {
+    Clock.prototype.start = function (useInterval) {
+        if (useInterval === void 0) { useInterval = false; }
         this.deltaTime = 0;
         this.currentTime = this.now();
         this.elapsedTime = 0;
         this.running = true;
+        if (useInterval) {
+            // auto set interval to 60 ticks per second
+            this._interval = setInterval(this.tick.bind(this), 1000 / 60);
+        }
     };
     Clock.prototype.stop = function () {
         this.running = false;
+        if (this._interval) {
+            clearInterval(this._interval);
+        }
     };
     Clock.prototype.tick = function (newTime) {
         if (newTime === void 0) { newTime = this.now(); }
