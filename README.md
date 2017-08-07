@@ -1,4 +1,4 @@
-clock.js [![Build Status](https://secure.travis-ci.org/gamestdio/clock.js.png?branch=master)](http://travis-ci.org/gamestdio/clock.js)
+@gamestdio/clock [![Build Status](https://secure.travis-ci.org/gamestdio/clock.js.png?branch=master)](http://travis-ci.org/gamestdio/clock.js)
 ===
 
 A simple clock/ticker implementation to track delta/elapsed time.
@@ -26,14 +26,16 @@ There's two ways you can use clock.js: manual or automatic.
 By initializing `Clock` with `true` as the first argument, a interval will be
 created, in which `tick()` is called 60 times per second.
 
-```javascript
-var clock = new Clock(true);
+```typescript
+import * as Clock from '@gamestdio/clock';
+let clock = new Clock(true);
 ```
 
 You can also call `start(true)` to create the interval.
 
 ```javascript
-var clock = new Clock();
+import * as Clock from '@gamestdio/clock';
+let clock = new Clock();
 clock.start(true);
 ```
 
@@ -41,8 +43,8 @@ clock.start(true);
 
 You call `tick()` manually in your existing loop.
 
-```javascript
-var Clock = require('clock.js');
+```typescript
+import * as Clock from '@gamestdio/clock';
 var clock = new Clock();
 
 setInterval(function() {
