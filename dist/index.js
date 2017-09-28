@@ -3,7 +3,7 @@ var Clock = (function () {
     function Clock(useInterval) {
         if (useInterval === void 0) { useInterval = false; }
         this.running = false;
-        this.now = (typeof (window) !== "undefined" && window.performance && (window.performance.now).bind(window.performance)) || Date.now;
+        this.now = (typeof (window) !== "undefined" && window.performance && window.performance.now && (window.performance.now).bind(window.performance)) || Date.now;
         this.start(useInterval);
     }
     Clock.prototype.start = function (useInterval) {

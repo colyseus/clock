@@ -6,7 +6,7 @@ class Clock {
   public currentTime: number;
   public elapsedTime: number;
 
-  protected now: Function = (typeof(window) !== "undefined" && window.performance && (window.performance.now).bind(window.performance)) || Date.now;
+  protected now: Function = (typeof(window) !== "undefined" && window.performance && window.performance.now && (window.performance.now).bind(window.performance)) || Date.now;
   protected _interval;
 
   constructor (useInterval: boolean = false) {
