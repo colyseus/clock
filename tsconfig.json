@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "build",
     "module": "commonjs",
-    "target": "es5",
+    "target": "es2017",
     "noImplicitAny": false,
     "sourceMap": false,
     "declaration": true
   },
   "include": [
-    "src/*.ts"
+    "src/**.ts"
   ]
 }

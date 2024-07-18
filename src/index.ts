@@ -1,5 +1,4 @@
-class Clock {
-
+export default class Clock {
   public running: boolean = false;
 
   public deltaTime: number;
@@ -7,7 +6,7 @@ class Clock {
   public elapsedTime: number;
 
   protected now: Function = (typeof(window) !== "undefined" && window.performance && window.performance.now && (window.performance.now).bind(window.performance)) || Date.now;
-  protected _interval;
+  protected _interval: any; // number or NodeJS.Timer
 
   constructor (useInterval: boolean = false) {
     this.start(useInterval);
@@ -40,5 +39,3 @@ class Clock {
   }
 
 }
-
-export = Clock

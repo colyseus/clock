@@ -1,9 +1,6 @@
-@gamestdio/clock [![Build Status](https://secure.travis-ci.org/gamestdio/clock.js.png?branch=master)](http://travis-ci.org/gamestdio/clock.js)
-===
+# @colyseus/clock
 
 A simple clock/ticker implementation to track delta/elapsed time.
-
-**2kb minified**
 
 API
 ---
@@ -27,14 +24,14 @@ By initializing `Clock` with `true` as the first argument, a interval will be
 created, in which `tick()` is called 60 times per second.
 
 ```typescript
-import * as Clock from '@gamestdio/clock';
+import Clock from '@colyseus/clock';
 let clock = new Clock(true);
 ```
 
 You can also call `start(true)` to create the interval.
 
 ```javascript
-import * as Clock from '@gamestdio/clock';
+import Clock from '@colyseus/clock';
 let clock = new Clock();
 clock.start(true);
 ```
@@ -44,7 +41,7 @@ clock.start(true);
 You call `tick()` manually in your existing loop.
 
 ```typescript
-import * as Clock from '@gamestdio/clock';
+import Clock from '@colyseus/clock';
 var clock = new Clock();
 
 setInterval(function() {
