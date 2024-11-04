@@ -1,13 +1,26 @@
 {
   "compilerOptions": {
-    "outDir": "build",
-    "module": "commonjs",
-    "target": "es2017",
-    "noImplicitAny": false,
-    "sourceMap": false,
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    "module": "NodeNext",
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+
     "declaration": true
   },
-  "include": [
-    "src/**.ts"
-  ]
+  "exclude": ["tsup.config.ts", "dist", "node_modules"]
 }

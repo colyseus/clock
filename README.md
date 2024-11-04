@@ -2,8 +2,7 @@
 
 A simple clock/ticker implementation to track delta/elapsed time.
 
-API
----
+## API
 
 - `new Clock([useInterval=false])`
 - `clock.start([useInterval=false])`
@@ -13,8 +12,7 @@ API
 - `clock.deltaTime`
 - `clock.currentTime`
 
-Usage example
----
+## Usage example
 
 There's two ways you can use clock.js: manual or automatic.
 
@@ -24,14 +22,14 @@ By initializing `Clock` with `true` as the first argument, a interval will be
 created, in which `tick()` is called 60 times per second.
 
 ```typescript
-import Clock from '@colyseus/clock';
+import Clock from "@colyseus/clock";
 let clock = new Clock(true);
 ```
 
 You can also call `start(true)` to create the interval.
 
 ```javascript
-import Clock from '@colyseus/clock';
+import Clock from "@colyseus/clock";
 let clock = new Clock();
 clock.start(true);
 ```
@@ -41,10 +39,10 @@ clock.start(true);
 You call `tick()` manually in your existing loop.
 
 ```typescript
-import Clock from '@colyseus/clock';
+import Clock from "@colyseus/clock";
 var clock = new Clock();
 
-setInterval(function() {
+setInterval(function () {
   clock.tick();
   console.log("Delta time: ", clock.deltaTime);
   console.log("Elapsed time: ", clock.elapsedTime);
@@ -52,8 +50,6 @@ setInterval(function() {
 }, 1000 / 60);
 ```
 
-
-License
----
+## License
 
 MIT
