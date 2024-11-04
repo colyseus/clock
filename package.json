@@ -2,7 +2,39 @@
   "name": "@colyseus/clock",
   "version": "1.0.0",
   "description": "A simple clock/ticker implementation to track elapsed/delta time.",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "lint": "tsc",
+    "check-exports": "attw --pack .",
+    "build": "tsup",
+    "prepublishOnly": "npm run ci",
+    "test": "vitest run",
+    "local-release": "changeset version && changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
+    "@changesets/cli": "^2.27.9",
+    "@types/node": "^22.8.7",
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.5",
+    "typescript": "^5.3.3",
+    "vitest": "^2.1.4"
+  },
   "author": "Endel Dreyer <endel.dreyer@gmail.com>",
+  "contributors": [
+    "Andréas HANSS <contact@codingspark.io> (https://github.com/ScreamZ)"
+  ],
   "keywords": [
     "clock",
     "ticker",
@@ -13,29 +45,10 @@
     "type": "git",
     "url": "git://github.com/colyseus/clock.git"
   },
-  "main": "./build/index.js",
-  "module": "./build/index.mjs",
-  "typings": "./build/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./build/index.mjs",
-      "require": "./build/index.js"
-    }
-  },
-  "scripts": {
-    "test": "npm run prepublish && mocha test",
-    "build": "tsc --emitDeclarationOnly && node build.mjs",
-    "prepublishOnly": "npm run build"
-  },
-  "files": [
-    "build", "LICENSE", "README.md"
-  ],
   "license": "MIT",
-  "devDependencies": {
-    "assert": "^1.3.0",
-    "esbuild": "^0.23.0",
-    "fast-glob": "^3.3.2",
-    "mocha": "^2.3.3",
-    "typescript": "^5.3.3"
-  }
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }
