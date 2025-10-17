@@ -1,6 +1,6 @@
 {
   "name": "@colyseus/clock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple clock/ticker implementation to track elapsed/delta time.",
   "author": "Endel Dreyer <endel.dreyer@gmail.com>",
   "keywords": [
@@ -18,6 +18,7 @@
   "typings": "./build/index.d.ts",
   "exports": {
     ".": {
+      "types": "./build/index.d.ts",
       "import": "./build/index.mjs",
       "require": "./build/index.js"
     }
