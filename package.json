@@ -1,6 +1,7 @@
 {
   "name": "@colyseus/clock",
-  "version": "1.0.1",
+  "version": "2.0.0",
+  "type": "module",
   "description": "A simple clock/ticker implementation to track elapsed/delta time.",
   "author": "Endel Dreyer <endel.dreyer@gmail.com>",
   "keywords": [
@@ -24,7 +25,7 @@
     }
   },
   "scripts": {
-    "test": "npm run prepublish && mocha test",
+    "test": "mocha test",
     "build": "tsc --emitDeclarationOnly && node build.mjs",
     "prepublishOnly": "npm run build"
   },

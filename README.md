@@ -24,15 +24,15 @@ By initializing `Clock` with `true` as the first argument, a interval will be
 created, in which `tick()` is called 60 times per second.
 
 ```typescript
-import Clock from '@colyseus/clock';
-let clock = new Clock(true);
+import { Clock } from '@colyseus/clock';
+const clock = new Clock(true);
 ```
 
 You can also call `start(true)` to create the interval.
 
 ```javascript
-import Clock from '@colyseus/clock';
-let clock = new Clock();
+import { Clock } from '@colyseus/clock';
+const clock = new Clock();
 clock.start(true);
 ```
 
@@ -42,7 +42,7 @@ You call `tick()` manually in your existing loop.
 
 ```typescript
 import Clock from '@colyseus/clock';
-var clock = new Clock();
+const clock = new Clock();
 
 setInterval(function() {
   clock.tick();

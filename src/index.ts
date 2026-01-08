@@ -1,4 +1,4 @@
-export default class Clock {
+export class Clock {
   public running: boolean = false;
 
   public deltaTime: number;

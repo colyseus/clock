@@ -1,5 +1,5 @@
-var assert = require("assert");
-var Clock = require('../dist/index.js');
+import assert from "assert";
+import { Clock } from '../src/index.ts';
 
 describe('clock', function() {
 
