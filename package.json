@@ -1,6 +1,6 @@
 {
   "name": "@colyseus/clock",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "type": "module",
   "description": "A simple clock/ticker implementation to track elapsed/delta time.",
   "author": "Endel Dreyer <endel.dreyer@gmail.com>",
